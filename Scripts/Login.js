@@ -189,17 +189,17 @@ function login(username, password) {
         },
         success: function (data) {
             try {
-                if ($("#rememerme").is(":checked")) {
-                    makeToast("ok f r", "ok");
-                    setCookie("userName", username, 100);
-                    setCookie("password", password, 100);
-                    makeToast("ok l r", "ok");
+                //if ($("#rememerme").is(":checked")) {
+                //    makeToast("ok f r", "ok");
+                //    setCookie("userName", username, 100);
+                //    setCookie("password", password, 100);
+                //    makeToast("ok l r", "ok");
 
-                }
-                else {
-                    eraseCookie("userName");
-                    eraseCookie("password");
-                }
+                //}
+                //else {
+                //    eraseCookie("userName");
+                //    eraseCookie("password");
+                //}
                 makeToast("ok f o", "ok");
 
                 setCookieObject(PersonalInformationSTR, data, 100);
