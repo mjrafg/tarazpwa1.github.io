@@ -188,16 +188,22 @@ function login(username, password) {
             setButtonState(false, $("#login"));
         },
         success: function (data) {
-            if ($("#rememerme").is(":checked")) {
-                setCookie("userName", username, 100);
-                setCookie("password", password, 100);
+            try {
+                if ($("#rememerme").is(":checked")) {
+                    setCookie("userName", username, 100);
+                    setCookie("password", password, 100);
+                }
+                else {
+                    eraseCookie("userName");
+                    eraseCookie("password");
+                }
+                setCookieObject(PersonalInformationSTR, data, 100);
+                goToHomePage();
             }
-            else {
-                eraseCookie("userName");
-                eraseCookie("password");
+            catch (ee) {
+                makeToast("خطا", "خطا");
             }
-            setCookieObject(PersonalInformationSTR, data, 100);
-            goToHomePage();
+            
         },
         error: function (xhr, status, error) {
             makeToast('خطایی در ارتباط با سرور رخ داده است لطفا دوباره امتحان کنید', 'خطا', 'error')

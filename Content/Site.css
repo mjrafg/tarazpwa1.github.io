@@ -2,6 +2,9 @@
     font-family: "irsans",Tahoma;
     background: #d2d2d2;
 }
+input {
+    font-family: "irsans",Tahoma;
+}
 html, body {
     height: 99%;
     overflow: hidden;
