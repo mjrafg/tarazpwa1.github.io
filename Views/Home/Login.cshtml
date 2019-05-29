@@ -7,30 +7,29 @@
 
 <html>
 <head>
-    <link rel="apple-touch-icon" href="~/Images/icons/icon-96x96.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="~/Images/icons/icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="192x192" href="~/Images/icons/icon-192x192.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="~/Images/icons/icon-384x384.png">
-    <link rel="apple-touch-startup-image" href="~/Images/icons/icon-384x384.png">
+    <link rel="apple-touch-icon" href="/Images/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/Images/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/Images/icons/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/Images/icons/icon-384x384.png">
+    <link rel="apple-touch-startup-image" href="/Images/icons/icon-384x384.png">
     <meta name="viewport" content="width=device-width" />
-    <link href="~/Content/font.css" rel="stylesheet" />
-    <link href="~/Content/jquery.toast.css" rel="stylesheet" />
-    <link href="~/Content/Site.css" rel="stylesheet" />
-    <link href="~/Content/login.css" rel="stylesheet" />
-    <link rel="manifest" href="~/manifest.json" />
+    <link href="/Content/font.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    <link href="/Content/login.css" rel="stylesheet" />
+    <link rel="manifest" href="/manifest.json" />
     <title>Login</title>
 </head>
 <body>
     <div class="header">
-        <img class="header-logo" src="~/Images/headerlogo.png" />
+        <img class="header-logo" src="/Images/headerlogo.png" />
         <p id="toptitle">نرم افزار کلوپ ورزشی پالادیوم</p>
-        <img id="back" class="back-icon" src="~/Images/ic-left.png" />
+        <img id="back" class="back-icon" src="/Images/ic-left.png" />
     </div>
     <div class="content">
-        <img id="loading" class="loading" src="~/Images/Ripple-1s-200px.svg" />
+        <img id="loading" class="loading" src="/Images/Ripple-1s-200px.svg" />
     </div>
     <div class="footer">
-        <img id="instagram" src="~/Images/Instagram-icon.png" />
+        <img id="instagram" src="/Images/Instagram-icon.png" />
     </div>
     <div id="divlogin" class="hide center-screen">
         <div class="text-input content-element">
@@ -39,7 +38,7 @@
             <input autocomplete="off" id="username" type="text" />
         </div>
         <div class="text-input content-element">
-            <img src="~/Images/ic-key.png">
+            <img src="/Images/ic-key.png">
             <label for="password">رمز عبور</label><br />
             <input id="password" type="password" />
         </div>
@@ -57,7 +56,7 @@
             <tr class="homerow">
                 <td id="financeItem" class="homeitem">
                     <div class="center full pointer">
-                        <img src="~/Images/ic_cart.png" />
+                        <img src="/Images/ic_cart.png" />
                     </div>
                     <div class="center full pointer">
                         <p>اطلاعات مالی</p>
@@ -65,7 +64,7 @@
                 </td>
                 <td id="registrationItem" class="homeitem">
                     <div class="center full pointer">
-                        <img src="~/Images/ic-registration.png" />
+                        <img src="/Images/ic-registration.png" />
                     </div>
                     <div class="center full pointer">
                         <p>اطلاعات ثبت نام</p>
@@ -73,7 +72,7 @@
                 </td>
                 <td id="personalInformationItem" class="homeitem">
                     <div class="center full pointer">
-                        <img src="~/Images/ic-profile.png" />
+                        <img src="/Images/ic-profile.png" />
                     </div>
                     <div class="center full pointer">
                         <p>اطلاعات فردی</p>
@@ -83,7 +82,7 @@
             <tr class="homerow">
                 <td id="newsItem" class="homeitem">
                     <div class="center full pointer">
-                        <img src="~/Images/ic-news.png" />
+                        <img src="/Images/ic-news.png" />
                     </div>
                     <div class="center full pointer">
                         <p>اخبار باشگاه ورزشی</p>
@@ -91,7 +90,7 @@
                 </td>
                 <td id="galleryItem" class="homeitem">
                     <div class="center full pointer">
-                        <img src="~/Images/ic-gallery.png" />
+                        <img src="/Images/ic-gallery.png" />
                     </div>
                     <div class="center full pointer">
                         <p>گالری تصاویر</p>
@@ -99,7 +98,7 @@
                 </td>
                 <td id="reportsItem" class="homeitem">
                     <div class="center full pointer">
-                        <img id="reportsItemIMG" src="~/Images/ic-report.png" />
+                        <img id="reportsItemIMG" src="/Images/ic-report.png" />
                     </div>
                     <div class="center full pointer">
                         <p id="reportsItemP">گزارشات</p>
@@ -278,8 +277,8 @@
     <div id="divGallery" class="hide">
         <img class="gallery-img" src="" />
         <div class="arrow-block">
-            <img class="arrow right" id="rightArrow" src="~/Images/ic-grerater-than.png" />
-            <img class="arrow left" id="leftArrow" src="~/Images/ic-less-than.png" />
+            <img class="arrow right" id="rightArrow" src="/Images/ic-grerater-than.png" />
+            <img class="arrow left" id="leftArrow" src="/Images/ic-less-than.png" />
         </div>
     </div>
     <div id="divreports" class="hide center-screen">
@@ -410,9 +409,9 @@
             </table>
         </div>
     </div>
-    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
-    <script src="~/Scripts/jquery.toast.js"></script>
-    <script src="~/Scripts/Login.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="/Scripts/Login.js"></script>
 </body>
 
 </html>

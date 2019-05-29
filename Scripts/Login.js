@@ -190,15 +190,24 @@ function login(username, password) {
         success: function (data) {
             try {
                 if ($("#rememerme").is(":checked")) {
+                    makeToast("ok f r", "ok");
                     setCookie("userName", username, 100);
                     setCookie("password", password, 100);
+                    makeToast("ok l r", "ok");
+
                 }
                 else {
                     eraseCookie("userName");
                     eraseCookie("password");
                 }
+                makeToast("ok f o", "ok");
+
                 setCookieObject(PersonalInformationSTR, data, 100);
+                makeToast("ok l o", "ok");
+
                 goToHomePage();
+                makeToast("ok", "ok");
+
             }
             catch (ee) {
                 makeToast("خطا", "خطا");
