@@ -1,0 +1,6 @@
+﻿@font-face {
+    font-family: 'irsans';
+    src: url('../fonts/AIranianSans.woff2') format('woff2'), url('../fonts/AIranianSans.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

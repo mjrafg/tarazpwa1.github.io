@@ -1,0 +1,27 @@
+﻿.container {
+    margin: auto;
+    width: 415px;
+    background: black;
+    text-align: center;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    border-radius:50px
+}
+.input_url{
+    height:40px;
+    width:300px;
+    float:right;
+    padding:5px;
+    font-size:large
+}
+.input_container{
+    margin:auto;
+    margin-top:50px;
+    width:350px
+}
+.right{
+    float:right
+}
+button {
+    height: 54px;
+}

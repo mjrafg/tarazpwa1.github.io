@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/test.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#go").on("click", function () {
+                var url = $(".input_url").val();
+                if (url != '')
+                {
+                    $('#myiframe').attr('src', url)
+                }
+                //alert(url);
+            });
+        });
+    </script>
+    <title>Test</title>
+</head>
+<body>
+    <div style="text-align:center">
+        <div class="container">
+            <iframe id="myiframe" style="width:375px;height:667px"></iframe>
+        </div>
+        <div class="input_container">
+            <button id="go" class="right">go</button>
+            <input value="http://localhost:65424/" type="text" class="input_url" />
+            
+        </div>
+    </div>
+</body>
+</html>

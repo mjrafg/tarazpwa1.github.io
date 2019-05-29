@@ -1,0 +1,416 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="apple-touch-icon" href="/Images/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/Images/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/Images/icons/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/Images/icons/icon-384x384.png">
+    <link rel="apple-touch-startup-image" href="/Images/icons/icon-384x384.png">
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/login.css" rel="stylesheet" />
+    <link rel="manifest" href="~/manifest.json" />
+    <title>Login</title>
+</head>
+<body>
+    <div class="header">
+        <img class="header-logo" src="~/Images/headerlogo.png" />
+        <p id="toptitle">نرم افزار کلوپ ورزشی پالادیوم</p>
+        <img id="back" class="back-icon" src="~/Images/ic-left.png" />
+    </div>
+    <div class="content">
+        <img id="loading" class="loading" src="~/Images/Ripple-1s-200px.svg" />
+    </div>
+    <div class="footer">
+        <img id="instagram" src="~/Images/Instagram-icon.png" />
+    </div>
+    <div id="divlogin" class="hide center-screen">
+        <div class="text-input content-element">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAB4AAAAeABBeqfSQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJVSURBVEiJtdW/axNhGMDx73MXRFAHndSihOJQ0l7S6FBEQSo6CeKPEoTi7F/QSRDa1U10sG4KCopWOqibOCiZ0uZyaRAtlZbSgiJCU4V49z4OJiVtk7vz1Gc53veeez7v+3J3jxAjVNXyPO+Cql4BepvT88Ajx3GmRcRE1ZCoBNd19wJTwKkui3htjLmUz+e/hdWxwm6qqqjq024IgIgM27b9WFVDFx0KeZ53UUSGw3KacbZSqZxPDBljCjGQVoTmhkIi4vwBlE0MAbvjKqq6JzEkIqtxIRFZSQyp6se4EBCaGwVNxVVU9XliCHgJfI5CROQL8CoxlMvl1oHxKAiYaOYmgwAajcakqr4NSSlalnU3qk7kvw5gbm7ugO/7n4AdW275ItLrOM5SVI3IHQFkMpkVoFOxxThIbKgZ94CfbWMfiDyyVnQ9uoWFhZ31en0EuGaMGcvlcsWZmZm0bdtPALVte6S/v3/R87wTxpgJEbldq9WmC4VC0Kneth2pqriuO7q2tjavqg9U9aSIjAOkUqk0cBQ4FgRBGsAYcx04rarP+vr63pfL5cuROyqVSgdTqdRDOvefc8ANYKg5LgITwIsOuW+MMaODg4PL26DZ2dkey7LeAYc7rQj4CuyLMdeKJWPM8Ra2cXQicisEoUvBbgjAIcuy7rQG7dCZkIeSxkZ3bn8ZfvwH6HsnaPJfK6q68Z1J26S4rntVRMaAgb80qqp6M5vN3hcR3QRtyqpWjwRBMAQMqGqPiOwHdvG7tbfa+zpQb15XgWURqfq+X8zn8x+21vwFy+jdGuMK7cgAAAAASUVORK5CYII=">
+            <label for="username">کاربری</label><br />
+            <input autocomplete="off" id="username" type="text" />
+        </div>
+        <div class="text-input content-element">
+            <img src="~/Images/ic-key.png">
+            <label for="password">رمز عبور</label><br />
+            <input id="password" type="password" />
+        </div>
+        <div class="remember-me content-element">
+            <input checked="checked" id="rememerme" type="checkbox" />
+            <label for="rememerme">رمز مرا به خاطر بسپار</label>
+        </div>
+        <div class="content-element">
+            <input class="button button-black button-rounded" type="button" id="login" value="ورود" />
+            <div class="loader loader-right" id="login-loader"></div>
+        </div>
+    </div>
+    <div id="divhome" class="hide center-screen">
+        <table class="full">
+            <tr class="homerow">
+                <td id="financeItem" class="homeitem">
+                    <div class="center full pointer">
+                        <img src="~/Images/ic_cart.png" />
+                    </div>
+                    <div class="center full pointer">
+                        <p>اطلاعات مالی</p>
+                    </div>
+                </td>
+                <td id="registrationItem" class="homeitem">
+                    <div class="center full pointer">
+                        <img src="~/Images/ic-registration.png" />
+                    </div>
+                    <div class="center full pointer">
+                        <p>اطلاعات ثبت نام</p>
+                    </div>
+                </td>
+                <td id="personalInformationItem" class="homeitem">
+                    <div class="center full pointer">
+                        <img src="~/Images/ic-profile.png" />
+                    </div>
+                    <div class="center full pointer">
+                        <p>اطلاعات فردی</p>
+                    </div>
+                </td>
+            </tr>
+            <tr class="homerow">
+                <td id="newsItem" class="homeitem">
+                    <div class="center full pointer">
+                        <img src="~/Images/ic-news.png" />
+                    </div>
+                    <div class="center full pointer">
+                        <p>اخبار باشگاه ورزشی</p>
+                    </div>
+                </td>
+                <td id="galleryItem" class="homeitem">
+                    <div class="center full pointer">
+                        <img src="~/Images/ic-gallery.png" />
+                    </div>
+                    <div class="center full pointer">
+                        <p>گالری تصاویر</p>
+                    </div>
+                </td>
+                <td id="reportsItem" class="homeitem">
+                    <div class="center full pointer">
+                        <img id="reportsItemIMG" src="~/Images/ic-report.png" />
+                    </div>
+                    <div class="center full pointer">
+                        <p id="reportsItemP">گزارشات</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="divfinance" class="hide">
+        <div class="title-block button-yellow bottom-margin">
+            <Label class="dark-content">مانده اعتبار :</Label>
+            <Label id="remainCost" class="dark-content">100000000</Label>
+        </div>
+        <div id="financecontent" class="content-block">
+            <div id="" class="financecontentitem content-item">
+                <p class="financeDescription full content-right">افتاحیه</p>
+                <p class="financeDocDate right content-right half">تاریخ : 28/04/1395</p>
+                <p class="bedBes left content-right half">کاهش اعتبار</p>
+            </div>
+        </div>
+    </div>
+    <div id="divregistration" class="hide center-screen">
+        <div class="content-element">
+            <button id="registrationActive" class="button button-rounded button-yellow">ثبت نام فعال</button>
+        </div>
+        <div class="content-element">
+            <button id="registrationDeactive" class="button button-rounded button-yellow">ثبت نام غیر فعال</button>
+        </div>
+    </div>
+    <div id="divregistrationinformation" class="hide">
+        <div id="registrationinformationcontent" class="content-block">
+            <div class="content-item">
+                <label class="description content-right">شرح : حمام سنتی - 1 جلسه - 1روز - 12000000 ریال</label>
+                <p class="startClassDate right">شروع : 28/02/1398</p>
+                <p class="expireClassDate right right-margin">پایان : 28/02/1398</p>
+                <div class="left button-small bottom-margin">
+                    <button class="registrationDetial button button-yellow button-rounded">جزییات</button>
+                </div>
+                <div class="clearfix full block-black bottom-margin">
+                    <span class="sessionMainCount right">تعداد جلسه : 1</span>
+                    <span class="sessionUsed right right-margin-sm">استفاده شده : 1</span>
+                    <span class="sessionRemain right right-margin-sm">مانده : 1</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="divregistrationdetail" class="hide">
+        <div class="content-item">
+            <table class="full detail-table bottom-margin rtl">
+                <thead>
+                    <tr>
+                        <th style="width:40%">
+                            جزییات
+                        </th>
+                        <th>
+                            تردد ها
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            خدمت :
+                        </td>
+                        <td id="registrationDetailMainGroupName"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            تعرفه :
+                        </td>
+                        <td id="registrationDetailPackName"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            زمان درخواست :
+                        </td>
+                        <td id="registrationDetailRegDate"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            زمان شروع :
+                        </td>
+                        <td id="registrationDetailStartClassDate"></td>
+                    </tr>
+                    <tr>
+                        <td>زمان پایان :</td>
+                        <td id="registrationDetailExpireClassDate"></td>
+                    </tr>
+                    <tr>
+                        <td>مبلغ کل :</td>
+                        <td id="registrationDetailNetPrice"></td>
+                    </tr>
+                    <tr>
+                        <td>مبلغ تخفیف :</td>
+                        <td id="registrationDetailDiscount"></td>
+                    </tr>
+                    <tr>
+                        <td>مبلغ قابل پرداخت :</td>
+                        <td id="registrationDetailPayPrice"></td>
+                    </tr>
+                    <tr>
+                        <td>تعداد جلسه :</td>
+                        <td id="registrationDetailSessionMainCount"></td>
+                    </tr>
+                    <tr>
+                        <td>استفاده شده :</td>
+                        <td id="registrationDetailSessionUsed"></td>
+                    </tr>
+                    <tr>
+                        <td>مانده :</td>
+                        <td id="registrationDetailSessionRemain"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="personalinformation" class="hide">
+        <div class="content-item">
+            <table class="full detail-table bottom-margin rtl">
+
+                <tbody>
+                    <tr>
+                        <td>
+                            شماره عضویت :
+                        </td>
+                        <td id="personalInformationCode"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            نام و نام خانوادگی :
+                        </td>
+                        <td id="personalInformationNameFamily">
+                            محمد جمیل رضایی
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            تاریخ تولد :
+                        </td>
+                        <td id="personalInformationBirthDay"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            تاریخ عضویت :
+                        </td>
+                        <td id="personalInformationRegDay"></td>
+                    </tr>
+                    <tr>
+                        <td>موبایل :</td>
+                        <td id="personalInformationMobile"></td>
+                    </tr>
+                    <tr>
+                        <td>سرگروه :</td>
+                        <td id="personalInformationFName"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="title-block button-yellow">
+            <label class="dark-content">زیرگروه ها</label>
+        </div>
+        <div id="personalSubContent">
+            <div style="margin-top:1px;margin-bottom:0" class="content-item content-right">
+                <p class="personalSubName">احمد</p>
+            </div>
+        </div>
+    </div>
+    <div id="divNews" class="hide">
+        <div id="newsContent" class="content-block">
+            <div class="content-item">
+                <label class="newsHeader content-right"></label>
+                <p class="newsDetail right full"></p>
+            </div>
+        </div>
+    </div>
+    <div id="divGallery" class="hide">
+        <img class="gallery-img" src="" />
+        <div class="arrow-block">
+            <img class="arrow right" id="rightArrow" src="~/Images/ic-grerater-than.png" />
+            <img class="arrow left" id="leftArrow" src="~/Images/ic-less-than.png" />
+        </div>
+    </div>
+    <div id="divreports" class="hide center-screen">
+        <div class="content-element">
+            <button id="trafficReport" class="button button-rounded button-yellow">گزارش تردد</button>
+        </div>
+        <div class="content-element">
+            <button id="dailyReport" class="button button-rounded button-yellow">گزارش روزانه</button>
+        </div>
+    </div>
+    <div id="divcontactus" class="hide center-screen">
+        <div class="content-element">
+            <button id="btncontactus" class="button button-rounded button-yellow">اینستاگرام</button>
+        </div>
+    </div>
+    <div id="divtrafficreport" class="hide">
+        <div class="getdateblock content-element">
+            <label class="right" for="intrafficreport">تاریخ</label>
+            <input  class="right" autocomplete="off" id="intrafficreport" type="text" />
+            <button id="showtrafficreport" class="right button-yellow">نمایش</button>            
+        </div>
+        <div id="trafficreportContetnt" class="content-block">
+            <div class="content-item hide">
+                <p class="PersonelName right half">سونیا غفاری</p>
+                <p class="SeccionCnt right half">میهمان : 0</p>
+                <div class="clearfix full block-black bottom-margin">
+                    <span class="InterTime half right">ساعت ورود : 11:21</span>
+                    <span class="ExitTime half right">ساعت خروج : 12:05</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="divdailyreport" class="hide">
+        <div class="getdateblock content-element">
+            <label class="right" for="indailyreport">تاریخ</label>
+            <input class="right" autocomplete="off" id="indailyreport" type="text" />
+            <button id="showdailyreport" class="right button-yellow">نمایش</button>
+        </div>
+        <div class="content-item">
+            <table class="full detail-table bottom-margin rtl">
+                <thead>
+                    <tr>
+                        <th style="width:60%">
+                            بانوان
+                        </th>
+                        <th>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            جمع صندوق استخر و بدنسازی :
+                        </td>
+                        <td class="content-left" id="dailyreportLb1"></td>
+                    </tr>
+                    <tr>
+                        <td>جمع صندوق ماساژ :</td>
+                        <td class="content-left" id="dailyreportLb2"></td>
+                    </tr>
+                    <tr>
+                        <td>جمع کل فروش :</td>
+                        <td class="content-left" id="dailyreportLb3"></td>
+                    </tr>
+                    <tr>
+                        <td>تعداد تردد روز :</td>
+                        <td class="content-left" id="dailyreportLb4"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="content-item">
+            <table class="full detail-table bottom-margin rtl">
+                <thead>
+                    <tr>
+                        <th style="width:60%">
+                            آقایان
+                        </th>
+                        <th>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            جمع صندوق استخر و بدنسازی :
+                        </td>
+                        <td class="content-left" id="dailyreportLb5"></td>
+                    </tr>
+                    <tr>
+                        <td>جمع صندوق ماساژ :</td>
+                        <td class="content-left" id="dailyreportLb6"></td>
+                    </tr>
+                    <tr>
+                        <td>جمع کل فروش :</td>
+                        <td class="content-left" id="dailyreportLb7"></td>
+                    </tr>
+                    <tr>
+                        <td>تعداد تردد روز :</td>
+                        <td class="content-left" id="dailyreportLb8"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="content-item">
+            <table class="full detail-table bottom-margin rtl">
+                <thead>
+                    <tr>
+                        <th style="width:50%">
+                            جمع :
+                        </th>
+                        <th>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            جمع کل فروش :
+                        </td>
+                        <td class="content-left" id="dailyreportLb9"></td>
+                    </tr>
+                    <tr>
+                        <td>تعداد تردد روز :</td>
+                        <td class="content-left" id="dailyreportLb10"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/Login.js"></script>
+</body>
+
+</html>
