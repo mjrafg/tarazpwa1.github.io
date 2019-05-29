@@ -229,7 +229,7 @@ function goToHomePage() {
 function checkUserType() {
     var personalInformation = getPersonalInformation();
     if (!personalInformation.St_Virtual) {
-        $("#reportsItemIMG").attr("src", "/Images/ic-call.png");
+        $("#reportsItemIMG").attr("src", "Images/ic-call.png");
         $("#reportsItemP").html("تماس با ما");
     }
 }
